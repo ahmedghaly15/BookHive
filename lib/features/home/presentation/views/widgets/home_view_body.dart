@@ -1,4 +1,5 @@
 import 'package:book_hive/core/utils/styles.dart';
+import 'package:book_hive/features/home/presentation/views/widgets/best_seller_list_view_item.dart';
 import 'package:flutter/material.dart';
 
 import 'custom_app_bar.dart';
@@ -9,72 +10,66 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        const CustomAppBar(),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24),
+    return CustomScrollView(
+      physics: const BouncingScrollPhysics(),
+      slivers: <Widget>[
+        SliverToBoxAdapter(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const <Widget>[
-              Text(
-                "Featured",
-                style: Styles.textStyle22,
+            children: <Widget>[
+              const CustomAppBar(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const <Widget>[
+                    Text(
+                      "Featured",
+                      style: Styles.textStyle22,
+                    ),
+                    FeaturedBooksListView(),
+                    SizedBox(height: 20),
+                    Text(
+                      "Best Seller",
+                      style: Styles.textStyle22,
+                    ),
+                    SizedBox(height: 18),
+                  ],
+                ),
               ),
-              FeaturedBooksListView(),
-              SizedBox(height: 20),
-              Text(
-                "Best Seller",
-                style: Styles.textStyle22,
-              ),
-              SizedBox(height: 18),
-              BestSellerListViewItem(),
             ],
           ),
+        ),
+        const SliverToBoxAdapter(
+          child: BestSellerListView(),
+        ),
+        const SliverToBoxAdapter(
+          child: SizedBox(height: 20),
         ),
       ],
     );
   }
 }
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
+class BestSellerListView extends StatelessWidget {
+  const BestSellerListView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 130,
-      child: Row(
-        children: <Widget>[
-          AspectRatio(
-            aspectRatio: 1.5 / 2,
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                image: const DecorationImage(
-                  image: NetworkImage(
-                      'https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books_23-2149334862.jpg?w=2000'),
-                  fit: BoxFit.fill,
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(width: 30),
-          Column(
-            children: <Widget>[
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.5,
-                child: const Text(
-                  "Harry Potter and the Goblet of Fire",
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: Styles.textStyle20,
-                ),
-              ),
-            ],
-          ),
-        ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24),
+      child: ListView.separated(
+        physics: const NeverScrollableScrollPhysics(),
+        // Download all items at the same time
+        shrinkWrap: true,
+        padding: EdgeInsets.zero,
+        itemCount: 10,
+        itemBuilder: (context, index) {
+          return const BestSellerListViewItem();
+        },
+        separatorBuilder: (context, index) {
+          return const SizedBox(height: 10);
+        },
       ),
     );
   }

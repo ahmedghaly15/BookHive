@@ -1,27 +1,55 @@
-import 'package:book_hive/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
-class SplashViewBody extends StatelessWidget {
+import '../../../../../core/utils/assets_data.dart';
+
+class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
 
   @override
+  State<SplashViewBody> createState() => _SplashViewBodyState();
+}
+
+class _SplashViewBodyState extends State<SplashViewBody>
+    with SingleTickerProviderStateMixin {
+  late AnimationController animationController;
+  late Animation<double> slideAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+
+    animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 3),
+    );
+
+    slideAnimation = Tween<double>(
+      begin: 0,
+      end: 1,
+    ).animate(animationController);
+
+    animationController.forward();
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: <Widget>[
-        Image.asset(AssetsData.logo),
-        const SizedBox(height: 6),
-        const Text(
-          "Read free books",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 16,
-            letterSpacing: 0.6,
+    return Center(
+      // To rebuild only this widget
+      child: AnimatedBuilder(
+        animation: slideAnimation,
+        builder: (context, _) => FadeTransition(
+          opacity: slideAnimation,
+          child: Image.asset(
+            AssetsData.logo,
           ),
-          textAlign: TextAlign.center,
         ),
-      ],
+      ),
     );
   }
 }

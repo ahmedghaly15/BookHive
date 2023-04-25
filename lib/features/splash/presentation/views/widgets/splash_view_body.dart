@@ -1,6 +1,7 @@
 import 'package:book_hive/constants.dart';
 import 'package:book_hive/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../../../../../core/utils/assets_data.dart';
@@ -20,6 +21,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     super.initState();
+
+    setSystemUIOverlayStyle();
 
     initFadingAnimation();
 
@@ -44,6 +47,17 @@ class _SplashViewBodyState extends State<SplashViewBody>
             AssetsData.logo,
           ),
         ),
+      ),
+    );
+  }
+
+  void setSystemUIOverlayStyle() {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        systemNavigationBarColor: kPrimaryColor,
+        statusBarColor: kPrimaryColor,
+        statusBarBrightness: Brightness.light,
       ),
     );
   }

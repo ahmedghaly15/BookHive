@@ -8,7 +8,6 @@ class FeaturedBooksListViewItem extends StatelessWidget {
     return AspectRatio(
       aspectRatio: 1.7 / 2,
       child: Container(
-        margin: const EdgeInsets.only(top: 18, right: 13),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           image: const DecorationImage(

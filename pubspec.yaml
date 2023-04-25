@@ -12,6 +12,7 @@ dependencies:
   flutter_launcher_icons: ^0.13.1
   font_awesome_flutter: ^10.4.0
   get: ^4.6.5
+  google_fonts: ^4.0.3
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -28,3 +29,8 @@ flutter:
 
   assets:
     - assets/images/
+
+  fonts:
+    - family: GT Sectra Fine
+      fonts:
+        - asset: assets/fonts/GT Sectra Fine Regular.ttf

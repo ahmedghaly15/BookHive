@@ -1,4 +1,4 @@
-import 'package:book_hive/shared/constants.dart';
+import 'package:book_hive/constants.dart';
 import 'package:book_hive/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

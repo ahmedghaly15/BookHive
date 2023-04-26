@@ -1,7 +1,8 @@
 import 'package:book_hive/core/utils/styles.dart';
-import 'package:book_hive/features/home/presentation/views/widgets/best_seller_list_view_item.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../constants.dart';
+import 'best_seller_list_view.dart';
 import 'custom_app_bar.dart';
 import 'featured_books_list_view.dart';
 
@@ -19,7 +20,8 @@ class HomeViewBody extends StatelessWidget {
             children: <Widget>[
               const CustomAppBar(),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: kDefaultPadding),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const <Widget>[
@@ -47,30 +49,6 @@ class HomeViewBody extends StatelessWidget {
           child: SizedBox(height: 20),
         ),
       ],
-    );
-  }
-}
-
-class BestSellerListView extends StatelessWidget {
-  const BestSellerListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
-      child: ListView.separated(
-        physics: const NeverScrollableScrollPhysics(),
-        // Download all items at the same time
-        shrinkWrap: true,
-        padding: EdgeInsets.zero,
-        itemCount: 10,
-        itemBuilder: (context, index) {
-          return const BestSellerListViewItem();
-        },
-        separatorBuilder: (context, index) {
-          return const SizedBox(height: 10);
-        },
-      ),
     );
   }
 }

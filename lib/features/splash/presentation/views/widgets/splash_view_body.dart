@@ -1,8 +1,8 @@
 import 'package:book_hive/constants.dart';
-import 'package:book_hive/features/home/presentation/views/home_view.dart';
+import 'package:book_hive/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/assets_data.dart';
 
@@ -65,7 +65,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void initFadingAnimation() {
     animationController = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 2),
+      duration: const Duration(seconds: 3),
     );
 
     fadeAnimation = Tween<double>(
@@ -78,13 +78,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void navigateToHome() {
     Future.delayed(
-      const Duration(milliseconds: 3500),
+      const Duration(seconds: 4),
       () {
-        Get.off(
-          () => const HomeView(),
-          transition: Transition.fade,
-          duration: kTransitionDuration,
-        );
+        GoRouter.of(context).push(AppRouter.kHomeViewRoute);
       },
     );
   }

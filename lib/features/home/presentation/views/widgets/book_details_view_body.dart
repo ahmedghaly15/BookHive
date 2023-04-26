@@ -1,7 +1,10 @@
 import 'package:book_hive/constants.dart';
+import 'package:book_hive/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:book_hive/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../core/utils/styles.dart';
+import 'book_actions.dart';
 import 'custom_book_details_app_bar.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -10,20 +13,50 @@ class BookDetailsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-      child: Column(
-        children: <Widget>[
-          const CustomBookDetailsAppBar(),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: screenWidth * 0.12,
-              vertical: kDefaultPadding / 2,
-            ),
-            child: const CustomBookImage(),
+    return Column(
+      children: <Widget>[
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8),
+          child: CustomBookDetailsAppBar(),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+          child: Column(
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.only(
+                  right: screenWidth * 0.12,
+                  left: screenWidth * 0.12,
+                  bottom: 43,
+                  top: kDefaultPadding / 2,
+                ),
+                child: const CustomBookImage(),
+              ),
+              Text(
+                "The Jungle Book",
+                style: Styles.textStyle30.copyWith(fontWeight: FontWeight.w600),
+              ),
+              const SizedBox(height: 6),
+              Opacity(
+                opacity: 0.7,
+                child: Text(
+                  "Rudyard Kipling",
+                  style: Styles.textStyle18.copyWith(
+                    fontStyle: FontStyle.italic,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+              const BookRating(
+                mainAxisAlignment: MainAxisAlignment.center,
+              ),
+              const SizedBox(height: 37),
+              const BookActions(),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

@@ -1,11 +1,9 @@
 import 'package:book_hive/constants.dart';
-import 'package:book_hive/core/utils/app_router.dart';
-import 'package:book_hive/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/assets_data.dart';
+import '../../../../home/presentation/views/home_view.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});

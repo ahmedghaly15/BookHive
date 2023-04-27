@@ -1,5 +1,6 @@
-import 'package:book_hive/constants.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../constants.dart';
 
 class CustomBookDetailsAppBar extends StatelessWidget {
   const CustomBookDetailsAppBar({super.key});
@@ -12,7 +13,7 @@ class CustomBookDetailsAppBar extends StatelessWidget {
         IconButton(
           onPressed: () {
             navigateBack(context);
-            // GoRouter.of(context).pop();/
+            // GoRouter.of(context).pop();
           },
           icon: const Icon(Icons.close),
         ),

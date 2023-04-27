@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class FeaturedBooksCubit extends Cubit<FeaturedBooksStates> {
   FeaturedBooksCubit(this.homeRepo) : super(FeaturedBooksInitialState());
 
-  static FeaturedBooksCubit getObject(context) => BlocProvider.of(context);
+  // static FeaturedBooksCubit getObject(context) => BlocProvider.of(context);
 
   final HomeRepo homeRepo;
 

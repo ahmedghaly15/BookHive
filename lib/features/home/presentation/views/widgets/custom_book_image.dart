@@ -1,9 +1,9 @@
-import 'package:book_hive/constants.dart';
-import 'package:book_hive/features/home/presentation/views/book_details_view.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../constants.dart';
 import '../../../data/models/book_model/book_model.dart';
+import '../book_details_view.dart';
 
 class CustomBookImage extends StatelessWidget {
   final BookModel book;

@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class NewestBooksCubit extends Cubit<NewestBooksStates> {
   NewestBooksCubit(this.homeRepo) : super(NewestBooksInitialState());
 
-  static NewestBooksCubit getObject(context) => BlocProvider.of(context);
+  // static NewestBooksCubit getObject(context) => BlocProvider.of(context);
 
   final HomeRepo homeRepo;
 

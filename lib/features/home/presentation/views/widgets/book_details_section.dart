@@ -31,6 +31,9 @@ class BookDetailsSection extends StatelessWidget {
         Text(
           book.volumeInfo.title!,
           style: Styles.textStyle30.copyWith(fontWeight: FontWeight.w600),
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+          textAlign: TextAlign.center,
         ),
         const SizedBox(height: 6),
         Opacity(
@@ -44,11 +47,12 @@ class BookDetailsSection extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 14),
-        const BookRating(
+        BookRating(
+          book: book,
           mainAxisAlignment: MainAxisAlignment.center,
         ),
         const SizedBox(height: 25),
-        const BookActions(),
+        BookActions(book: book),
       ],
     );
   }

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/styles.dart';
+import '../../../data/models/book_model/book_model.dart';
 import 'similar_books_list_view.dart';
 
 class SimilarBooksSection extends StatelessWidget {
-  const SimilarBooksSection({super.key});
+  final BookModel book;
+  const SimilarBooksSection({super.key, required this.book});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,7 @@ class SimilarBooksSection extends StatelessWidget {
           style: Styles.textStyle16.copyWith(fontWeight: FontWeight.w600),
         ),
         const SizedBox(height: 15),
-        const SimilarBooksListView(),
+        SimilarBooksListView(book: book),
       ],
     );
   }

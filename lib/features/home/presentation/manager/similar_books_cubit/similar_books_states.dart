@@ -1,4 +1,4 @@
-import '../../../../../core/models/book_model/book_model.dart';
+import '/core/models/book_model/book_model.dart';
 
 abstract class SimilarBooksStates {
   const SimilarBooksStates();

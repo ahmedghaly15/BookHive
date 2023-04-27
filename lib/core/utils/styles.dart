@@ -1,5 +1,6 @@
-import 'package:book_hive/constants.dart';
 import 'package:flutter/material.dart';
+
+import '/constants.dart';
 
 abstract class Styles {
   static const textStyle22 = TextStyle(

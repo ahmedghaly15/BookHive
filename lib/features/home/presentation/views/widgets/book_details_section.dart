@@ -1,8 +1,8 @@
-import 'package:book_hive/core/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../constants.dart';
-import '../../../../../core/utils/styles.dart';
+import '/constants.dart';
+import '/core/models/book_model/book_model.dart';
+import '/core/utils/styles.dart';
 import 'book_actions.dart';
 import 'book_rating.dart';
 import 'custom_book_image.dart';

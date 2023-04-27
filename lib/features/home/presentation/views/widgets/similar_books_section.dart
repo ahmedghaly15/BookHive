@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utils/styles.dart';
-import '../../../../../core/models/book_model/book_model.dart';
+import '/core/models/book_model/book_model.dart';
+import '/core/utils/styles.dart';
 import 'similar_books_list_view.dart';
 
 class SimilarBooksSection extends StatelessWidget {

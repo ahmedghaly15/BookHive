@@ -1,11 +1,11 @@
-import 'package:book_hive/core/utils/service_locator.dart';
-import 'package:book_hive/features/search/data/repo/search_repo_impl.dart';
-import 'package:book_hive/features/search/presentation/manager/search_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../constants.dart';
-import '../../../../../core/utils/styles.dart';
+import '/constants.dart';
+import '/core/utils/service_locator.dart';
+import '/core/utils/styles.dart';
+import '/features/search/data/repo/search_repo_impl.dart';
+import '/features/search/presentation/manager/search_cubit.dart';
 import 'custom_text_field.dart';
 import 'search_result_list_view.dart';
 

@@ -1,10 +1,10 @@
-import 'package:book_hive/core/widgets/custom_loading_indicator.dart';
-import 'package:book_hive/features/search/presentation/manager/search_cubit.dart';
-import 'package:book_hive/features/search/presentation/manager/search_states.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../home/presentation/views/widgets/book_list_view_item.dart';
+import '/core/widgets/custom_loading_indicator.dart';
+import '/features/search/presentation/manager/search_cubit.dart';
+import '/features/search/presentation/manager/search_states.dart';
 
 class SearchResultListView extends StatelessWidget {
   const SearchResultListView({super.key});

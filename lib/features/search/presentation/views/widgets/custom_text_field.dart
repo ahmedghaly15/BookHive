@@ -1,9 +1,9 @@
-import 'package:book_hive/features/search/presentation/manager/search_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../../../../core/utils/styles.dart';
+import '/core/utils/styles.dart';
+import '/features/search/presentation/manager/search_cubit.dart';
 
 class CustomSearchTextField extends StatelessWidget {
   const CustomSearchTextField({super.key});
@@ -11,7 +11,6 @@ class CustomSearchTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      // controller: ,
       onChanged: (value) {
         BlocProvider.of<SearchCubit>(context).getSearchResult(value);
       },

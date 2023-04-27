@@ -1,11 +1,11 @@
-import 'package:book_hive/core/widgets/custom_error_widget.dart';
-import 'package:book_hive/core/widgets/custom_loading_indicator.dart';
-import 'package:book_hive/features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
-import 'package:book_hive/features/home/presentation/manager/newest_books_cubit/newest_books_states.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../constants.dart';
+import '/constants.dart';
+import '/core/widgets/custom_error_widget.dart';
+import '/core/widgets/custom_loading_indicator.dart';
+import '/features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
+import '/features/home/presentation/manager/newest_books_cubit/newest_books_states.dart';
 import 'book_list_view_item.dart';
 
 class NewestListView extends StatelessWidget {

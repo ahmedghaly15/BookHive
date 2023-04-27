@@ -1,9 +1,9 @@
-import 'package:book_hive/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../../../../core/utils/assets_data.dart';
 import '../../../../home/presentation/views/home_view.dart';
+import '/constants.dart';
+import '/core/utils/assets_data.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -78,10 +78,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void navigateToHome() {
     Future.delayed(
       const Duration(seconds: 4),
-      () {
-        navigateAndFinish(context, screen: const HomeView());
-        // GoRouter.of(context).pushReplacement(AppRouter.kHomeViewRoute);
-      },
+      () => navigateAndFinish(context, screen: const HomeView()),
     );
   }
 }

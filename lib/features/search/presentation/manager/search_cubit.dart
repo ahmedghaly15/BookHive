@@ -1,6 +1,7 @@
-import 'package:book_hive/features/search/data/repo/search_repo.dart';
-import 'package:book_hive/features/search/presentation/manager/search_states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '/features/search/data/repo/search_repo.dart';
+import '/features/search/presentation/manager/search_states.dart';
 
 class SearchCubit extends Cubit<SearchStates> {
   SearchCubit(this.searchRepo) : super(SearchInitialState());

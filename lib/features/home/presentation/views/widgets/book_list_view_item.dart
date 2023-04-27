@@ -1,10 +1,10 @@
-import 'package:book_hive/core/models/book_model/book_model.dart';
-import 'package:book_hive/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../constants.dart';
-import '../../../../../core/utils/styles.dart';
 import '../book_details_view.dart';
+import '/constants.dart';
+import '/core/models/book_model/book_model.dart';
+import '/core/utils/styles.dart';
+import '/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'book_rating.dart';
 
 class BookListViewItem extends StatelessWidget {
@@ -14,10 +14,7 @@ class BookListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        navigateTo(context, BookDetailsView(book: book));
-        // GoRouter.of(context).push(AppRouter.kBookDetailsViewRoute, extra: book);
-      },
+      onTap: () => navigateTo(context, BookDetailsView(book: book)),
       child: SizedBox(
         height: 130,
         child: Row(

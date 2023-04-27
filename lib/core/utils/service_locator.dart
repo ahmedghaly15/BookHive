@@ -1,10 +1,11 @@
-import 'package:book_hive/core/utils/api_service.dart';
-import 'package:book_hive/features/home/data/repos/home_repo_implementation.dart';
-import 'package:book_hive/features/search/data/repo/search_repo_impl.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
-// Dependency Injection
+import '/core/utils/api_service.dart';
+import '/features/home/data/repos/home_repo_implementation.dart';
+import '/features/search/data/repo/search_repo_impl.dart';
+
+// Dependency Injection Concept
 
 final getIt = GetIt.instance;
 

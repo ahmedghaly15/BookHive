@@ -1,9 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../constants.dart';
-import '../../../../../core/models/book_model/book_model.dart';
 import '../book_details_view.dart';
+import '/constants.dart';
+import '/core/models/book_model/book_model.dart';
 
 class CustomBookImage extends StatelessWidget {
   final BookModel book;
@@ -14,10 +14,7 @@ class CustomBookImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        navigateTo(context, BookDetailsView(book: book));
-        // GoRouter.of(context).push(AppRouter.kBookDetailsViewRoute);
-      },
+      onTap: () => navigateTo(context, BookDetailsView(book: book)),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(16),
         child: AspectRatio(

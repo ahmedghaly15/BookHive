@@ -1,9 +1,10 @@
-import 'package:book_hive/core/utils/api_service.dart';
-import 'package:book_hive/core/models/book_model/book_model.dart';
-import 'package:book_hive/core/errors/failure.dart';
-import 'package:book_hive/features/search/data/repo/search_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+
+import '/core/errors/failure.dart';
+import '/core/models/book_model/book_model.dart';
+import '/core/utils/api_service.dart';
+import '/features/search/data/repo/search_repo.dart';
 
 class SearchRepoImpl implements SearchRepo {
   final ApiService apiService;

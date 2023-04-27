@@ -1,5 +1,6 @@
-import 'package:book_hive/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+
+import '/core/utils/styles.dart';
 
 class CustomErrorWidget extends StatelessWidget {
   final String errorMessage;

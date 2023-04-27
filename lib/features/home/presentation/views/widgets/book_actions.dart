@@ -1,10 +1,9 @@
-import 'package:book_hive/constants.dart';
-import 'package:book_hive/features/web/presentation/views/web_view_screen.dart';
 import 'package:flutter/material.dart';
 
-import 'package:book_hive/core/models/book_model/book_model.dart';
-
-import '../../../../../core/widgets/custom_button.dart';
+import '/constants.dart';
+import '/core/models/book_model/book_model.dart';
+import '/core/widgets/custom_button.dart';
+import '../../../../web_display/presentation/views/web_view_screen.dart';
 
 class BookActions extends StatelessWidget {
   final BookModel book;
@@ -32,13 +31,11 @@ class BookActions extends StatelessWidget {
             child: CustomButton(
               onPressed: () {
                 navigateTo(
-                    context, WebViewScreen(url: book.volumeInfo.previewLink!));
-                // launchCustomUrl(context, book.volumeInfo.previewLink!);
-
-                // Uri url = Uri.parse(book.volumeInfo.previewLink!);
-                // if (await canLaunchUrl(url)) {
-                //   await launchUrl(url);
-                // } else {}
+                  context,
+                  WebViewScreen(
+                    url: book.volumeInfo.previewLink!,
+                  ),
+                );
               },
               backgroundColor: const Color(0xffEF8262),
               text: getText(book),

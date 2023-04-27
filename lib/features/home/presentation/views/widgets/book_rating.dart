@@ -1,8 +1,8 @@
-import 'package:book_hive/core/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../../../../core/utils/styles.dart';
+import '/core/models/book_model/book_model.dart';
+import '/core/utils/styles.dart';
 
 class BookRating extends StatelessWidget {
   final MainAxisAlignment mainAxisAlignment;

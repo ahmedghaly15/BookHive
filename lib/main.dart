@@ -1,18 +1,16 @@
-import 'package:book_hive/constants.dart';
-import 'package:book_hive/core/utils/service_locator.dart';
-import 'package:book_hive/features/home/data/repos/home_repo_implementation.dart';
-import 'package:book_hive/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
-import 'package:book_hive/features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-// import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '/constants.dart';
+import '/core/utils/service_locator.dart';
+import '/features/home/data/repos/home_repo_implementation.dart';
+import '/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
+import '/features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
 import 'features/splash/presentation/views/splash_view.dart';
 import 'my_bloc_observer.dart';
 
 void main() {
-  //============= Observing My Bloc =============
   Bloc.observer = MyBlocObserver();
   setupServiceLocator();
   runApp(const BookHiveApp());

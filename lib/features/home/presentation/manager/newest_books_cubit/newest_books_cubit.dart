@@ -1,11 +1,10 @@
-import 'package:book_hive/features/home/data/repos/home_repo.dart';
-import 'package:book_hive/features/home/presentation/manager/newest_books_cubit/newest_books_states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '/features/home/data/repos/home_repo.dart';
+import '/features/home/presentation/manager/newest_books_cubit/newest_books_states.dart';
 
 class NewestBooksCubit extends Cubit<NewestBooksStates> {
   NewestBooksCubit(this.homeRepo) : super(NewestBooksInitialState());
-
-  // static NewestBooksCubit getObject(context) => BlocProvider.of(context);
 
   final HomeRepo homeRepo;
 

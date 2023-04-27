@@ -1,4 +1,4 @@
-import 'package:book_hive/features/home/data/models/book_model/book_model.dart';
+import 'package:book_hive/core/models/book_model/book_model.dart';
 
 abstract class FeaturedBooksStates {
   const FeaturedBooksStates();

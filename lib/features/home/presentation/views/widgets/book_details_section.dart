@@ -1,4 +1,4 @@
-import 'package:book_hive/features/home/data/models/book_model/book_model.dart';
+import 'package:book_hive/core/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../constants.dart';
@@ -39,7 +39,7 @@ class BookDetailsSection extends StatelessWidget {
         Opacity(
           opacity: 0.7,
           child: Text(
-            book.volumeInfo.authors![0],
+            book.volumeInfo.authors?[0] ?? 'Unknown',
             style: Styles.textStyle18.copyWith(
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.w500,

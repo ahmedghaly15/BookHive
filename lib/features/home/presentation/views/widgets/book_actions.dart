@@ -1,8 +1,8 @@
 import 'package:book_hive/constants.dart';
-import 'package:book_hive/features/web_view/presentation/views/web_view_screen.dart';
+import 'package:book_hive/features/web/presentation/views/web_view_screen.dart';
 import 'package:flutter/material.dart';
 
-import 'package:book_hive/features/home/data/models/book_model/book_model.dart';
+import 'package:book_hive/core/models/book_model/book_model.dart';
 
 import '../../../../../core/widgets/custom_button.dart';
 

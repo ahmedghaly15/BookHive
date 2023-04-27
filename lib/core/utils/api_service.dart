@@ -7,8 +7,12 @@ class ApiService {
 
   const ApiService(this._dio);
 
-  Future<Map<String, dynamic>> getData({required String endPoint}) async {
-    var response = await _dio.get("$_baseUrl$endPoint");
+  Future<Map<String, dynamic>> getData(
+      {required String endPoint, Map<String, dynamic>? queries}) async {
+    var response = await _dio.get(
+      "$_baseUrl$endPoint",
+      queryParameters: queries,
+    );
     return response.data;
   }
 }

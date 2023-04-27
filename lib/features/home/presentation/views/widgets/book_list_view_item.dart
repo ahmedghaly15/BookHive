@@ -1,4 +1,4 @@
-import 'package:book_hive/features/home/data/models/book_model/book_model.dart';
+import 'package:book_hive/core/models/book_model/book_model.dart';
 import 'package:book_hive/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 
@@ -44,8 +44,10 @@ class BookListViewItem extends StatelessWidget {
                   ),
                   const SizedBox(height: 3),
                   Text(
-                    book.volumeInfo.authors![0],
+                    book.volumeInfo.authors?[0] ?? 'Unknown',
                     style: Styles.textStyle14,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                   ),
                   const SizedBox(height: 3),
                   Row(

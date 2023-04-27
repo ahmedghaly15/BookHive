@@ -1,5 +1,6 @@
 import 'package:book_hive/constants.dart';
 import 'package:book_hive/core/utils/app_router.dart';
+import 'package:book_hive/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
@@ -80,7 +81,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
     Future.delayed(
       const Duration(seconds: 4),
       () {
-        GoRouter.of(context).pushReplacement(AppRouter.kHomeViewRoute);
+        navigateAndFinish(context, screen: const HomeView());
+        // GoRouter.of(context).pushReplacement(AppRouter.kHomeViewRoute);
       },
     );
   }

@@ -15,10 +15,13 @@ class SimilarBooksListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: 10,
         itemBuilder: (context, index) {
-          return const CustomBookImage(
-            imageUrl:
-                'https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books_23-2149334862.jpg?w=2000',
-          );
+          return null;
+
+          // return  CustomBookImage(
+          //   book: ,
+          //   imageUrl:
+          //       'https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books_23-2149334862.jpg?w=2000',
+          // );
         },
         separatorBuilder: (context, index) {
           return const SizedBox(width: 10);

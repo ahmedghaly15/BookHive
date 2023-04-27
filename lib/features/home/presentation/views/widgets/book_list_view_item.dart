@@ -1,8 +1,7 @@
-import 'package:book_hive/core/utils/app_router.dart';
 import 'package:book_hive/features/home/data/models/book_model/book_model.dart';
+import 'package:book_hive/features/home/presentation/views/book_details_view.dart';
 import 'package:book_hive/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 import '../../../../../constants.dart';
 import '../../../../../core/utils/styles.dart';
@@ -15,12 +14,18 @@ class BookListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => GoRouter.of(context).push(AppRouter.kBookDetailsViewRoute),
+      onTap: () {
+        navigateTo(context, BookDetailsView(book: book));
+        // GoRouter.of(context).push(AppRouter.kBookDetailsViewRoute);
+      },
       child: SizedBox(
         height: 130,
         child: Row(
           children: <Widget>[
-            CustomBookImage(imageUrl: book.volumeInfo.imageLinks.thumbnail),
+            CustomBookImage(
+              book: book,
+              imageUrl: book.volumeInfo.imageLinks.thumbnail,
+            ),
             const SizedBox(width: 30),
             Expanded(
               child: Column(

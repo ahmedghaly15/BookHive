@@ -1,4 +1,6 @@
+import 'package:book_hive/constants.dart';
 import 'package:book_hive/core/utils/app_router.dart';
+import 'package:book_hive/features/search/presentation/views/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
@@ -24,8 +26,10 @@ class CustomAppBar extends StatelessWidget {
             height: 43,
           ),
           IconButton(
-            onPressed: () =>
-                GoRouter.of(context).push(AppRouter.kSearchViewRoute),
+            onPressed: () {
+              navigateTo(context, const SearchView());
+              // GoRouter.of(context).push(AppRouter.kSearchViewRoute);
+            },
             icon: const Icon(
               FontAwesomeIcons.magnifyingGlass,
               size: 22,

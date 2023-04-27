@@ -1,3 +1,4 @@
+import 'package:book_hive/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../constants.dart';
@@ -7,7 +8,8 @@ import 'book_rating.dart';
 import 'custom_book_image.dart';
 
 class BookDetailsSection extends StatelessWidget {
-  const BookDetailsSection({super.key});
+  final BookModel book;
+  const BookDetailsSection({super.key, required this.book});
 
   @override
   Widget build(BuildContext context) {
@@ -18,34 +20,34 @@ class BookDetailsSection extends StatelessWidget {
           padding: EdgeInsets.only(
             right: screenWidth * 0.12,
             left: screenWidth * 0.12,
-            bottom: 43,
+            bottom: 30,
             top: kDefaultPadding / 2,
           ),
-          child: const CustomBookImage(
-            imageUrl:
-                'https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books_23-2149334862.jpg?w=2000',
+          child: CustomBookImage(
+            book: book,
+            imageUrl: book.volumeInfo.imageLinks.thumbnail,
           ),
         ),
         Text(
-          "The Jungle Book",
+          book.volumeInfo.title!,
           style: Styles.textStyle30.copyWith(fontWeight: FontWeight.w600),
         ),
         const SizedBox(height: 6),
         Opacity(
           opacity: 0.7,
           child: Text(
-            "Rudyard Kipling",
+            book.volumeInfo.authors![0],
             style: Styles.textStyle18.copyWith(
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.w500,
             ),
           ),
         ),
-        const SizedBox(height: 16),
+        const SizedBox(height: 14),
         const BookRating(
           mainAxisAlignment: MainAxisAlignment.center,
         ),
-        const SizedBox(height: 30),
+        const SizedBox(height: 25),
         const BookActions(),
       ],
     );

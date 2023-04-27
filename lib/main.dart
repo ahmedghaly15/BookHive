@@ -1,5 +1,4 @@
 import 'package:book_hive/constants.dart';
-import 'package:book_hive/core/utils/app_router.dart';
 import 'package:book_hive/core/utils/service_locator.dart';
 import 'package:book_hive/features/home/data/repos/home_repo_implementation.dart';
 import 'package:book_hive/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
@@ -9,6 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'features/splash/presentation/views/splash_view.dart';
 import 'my_bloc_observer.dart';
 
 void main() {
@@ -34,15 +34,14 @@ class BookHiveApp extends StatelessWidget {
               NewestBooksCubit(getIt.get<HomeRepoImpl>())..fetchNewestBooks(),
         ),
       ],
-      child: MaterialApp.router(
-        routerConfig: AppRouter.router,
+      child: MaterialApp(
         theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: kPrimaryColor,
           textTheme:
               GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
         ),
         debugShowCheckedModeBanner: false,
-        // home: const SplashView(),
+        home: const SplashView(),
       ),
     );
   }

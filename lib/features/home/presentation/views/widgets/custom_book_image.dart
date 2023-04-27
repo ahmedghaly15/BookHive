@@ -1,16 +1,23 @@
-import 'package:book_hive/core/utils/app_router.dart';
+import 'package:book_hive/constants.dart';
+import 'package:book_hive/features/home/presentation/views/book_details_view.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+
+import '../../../data/models/book_model/book_model.dart';
 
 class CustomBookImage extends StatelessWidget {
+  final BookModel book;
   final String imageUrl;
-  const CustomBookImage({super.key, required this.imageUrl});
+  const CustomBookImage(
+      {super.key, required this.imageUrl, required this.book});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => GoRouter.of(context).push(AppRouter.kBookDetailsViewRoute),
+      onTap: () {
+        navigateTo(context, BookDetailsView(book: book));
+        // GoRouter.of(context).push(AppRouter.kBookDetailsViewRoute);
+      },
       child: ClipRRect(
         borderRadius: BorderRadius.circular(16),
         child: AspectRatio(

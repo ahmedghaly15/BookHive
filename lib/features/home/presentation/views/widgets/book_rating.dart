@@ -6,8 +6,10 @@ import '../../../../../core/utils/styles.dart';
 class BookRating extends StatelessWidget {
   final MainAxisAlignment mainAxisAlignment;
 
-  const BookRating(
-      {super.key, this.mainAxisAlignment = MainAxisAlignment.start});
+  const BookRating({
+    super.key,
+    this.mainAxisAlignment = MainAxisAlignment.start,
+  });
 
   @override
   Widget build(BuildContext context) {

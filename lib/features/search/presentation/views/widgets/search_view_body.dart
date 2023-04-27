@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../../constants.dart';
 import '../../../../../core/utils/styles.dart';
-import '../../../../home/presentation/views/widgets/best_seller_list_view_item.dart';
 import 'custom_text_field.dart';
+import 'search_result_list_view.dart';
 
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({super.key});
@@ -37,27 +37,6 @@ class SearchViewBody extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
-}
-
-class SearchResultListView extends StatelessWidget {
-  const SearchResultListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.separated(
-      padding: EdgeInsets.zero,
-      physics: const NeverScrollableScrollPhysics(),
-      // Download all items at the same time
-      shrinkWrap: true,
-      itemCount: 10,
-      itemBuilder: (context, index) {
-        return const BookListViewItem();
-      },
-      separatorBuilder: (context, index) {
-        return const SizedBox(height: 10);
-      },
     );
   }
 }

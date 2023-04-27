@@ -2,7 +2,7 @@ import 'package:book_hive/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../constants.dart';
-import 'best_seller_list_view.dart';
+import 'newest_list_view.dart';
 import 'custom_app_bar.dart';
 import 'featured_books_list_view.dart';
 
@@ -32,7 +32,7 @@ class HomeViewBody extends StatelessWidget {
                     FeaturedBooksListView(),
                     SizedBox(height: 20),
                     Text(
-                      "Best Seller",
+                      "Newest",
                       style: Styles.textStyle22,
                     ),
                     SizedBox(height: 18),
@@ -43,7 +43,7 @@ class HomeViewBody extends StatelessWidget {
           ),
         ),
         const SliverToBoxAdapter(
-          child: BestSellerListView(),
+          child: NewestListView(),
         ),
         const SliverToBoxAdapter(
           child: SizedBox(height: 20),

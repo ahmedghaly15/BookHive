@@ -1,10 +1,12 @@
 import 'package:book_hive/constants.dart';
 import 'package:book_hive/core/utils/app_router.dart';
+import 'package:book_hive/core/utils/service_locator.dart';
 import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
+  setupServiceLocator();
   runApp(const BookHiveApp());
 }
 

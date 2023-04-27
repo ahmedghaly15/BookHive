@@ -10,7 +10,7 @@ class CustomBookImage extends StatelessWidget {
     return GestureDetector(
       onTap: () => GoRouter.of(context).push(AppRouter.kBookDetailsViewRoute),
       child: AspectRatio(
-        aspectRatio: 1.7 / 2,
+        aspectRatio: 1.5 / 2,
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),

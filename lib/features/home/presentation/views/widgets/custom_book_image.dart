@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class CustomBookImage extends StatelessWidget {
-  const CustomBookImage({super.key});
+  final String imageUrl;
+  const CustomBookImage({super.key, required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +15,8 @@ class CustomBookImage extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
-            image: const DecorationImage(
-              image: NetworkImage(
-                  'https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books_23-2149334862.jpg?w=2000'),
+            image: DecorationImage(
+              image: NetworkImage(imageUrl),
               fit: BoxFit.fill,
             ),
           ),

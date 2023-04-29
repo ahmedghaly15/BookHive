@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 const Color kPrimaryColor = Color(0xff102e44);
 
@@ -10,16 +9,45 @@ const String kGTSectraFine = 'GT Sectra Fine';
 const double kDefaultPadding = 24.0;
 
 void navigateBack(context) {
-  Get.back();
+  Navigator.pop(context);
 }
 
-void navigateTo(context, Widget screen) {
-  Get.to(screen, transition: Transition.leftToRightWithFade);
+Route createRoute(Widget screen) {
+  return PageRouteBuilder(
+    pageBuilder: (context, animation, secondaryAnimation) => screen,
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      final tween = Tween<double>(
+        begin: 0,
+        end: 1,
+      );
+      final opacityAnimation = tween.animate(
+        CurvedAnimation(
+          parent: animation,
+          curve: Curves.easeInExpo,
+        ),
+      );
+      return FadeTransition(
+        opacity: opacityAnimation,
+        child: child,
+      );
+    },
+  );
 }
 
-void navigateAndFinish(context, {required Widget screen}) {
-  Get.off(
-    () => screen,
-    transition: Transition.fadeIn,
+void navigateTo({
+  required BuildContext context,
+  required Widget screen,
+}) {
+  Navigator.of(context).push(createRoute(screen));
+}
+
+void navigateAndFinish({
+  required BuildContext context,
+  required Widget screen,
+}) {
+  Navigator.pushAndRemoveUntil(
+    context,
+    MaterialPageRoute(builder: (context) => screen),
+    (Route<dynamic> route) => false, // remove all previous routes
   );
 }

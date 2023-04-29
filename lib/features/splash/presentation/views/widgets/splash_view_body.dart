@@ -85,8 +85,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
     slideAnimation = Tween<Offset>(
       begin: const Offset(0, 8),
       end: Offset.zero,
-    ).animate(CurvedAnimation(
-        parent: animationController, curve: Curves.fastOutSlowIn));
+    ).animate(
+      CurvedAnimation(
+        parent: animationController,
+        curve: Curves.fastOutSlowIn,
+      ),
+    );
 
     animationController.forward();
   }
@@ -94,7 +98,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void navigateToHome() {
     Future.delayed(
       const Duration(seconds: 4),
-      () => navigateAndFinish(context, screen: const HomeView()),
+      () => navigateAndFinish(context: context, screen: const HomeView()),
     );
   }
 }

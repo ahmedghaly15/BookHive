@@ -24,7 +24,10 @@ class CustomAppBar extends StatelessWidget {
             height: 43,
           ),
           IconButton(
-            onPressed: () => navigateTo(context, const SearchView()),
+            onPressed: () => navigateTo(
+              context: context,
+              screen: const SearchView(),
+            ),
             icon: const Icon(
               FontAwesomeIcons.magnifyingGlass,
               size: 22,

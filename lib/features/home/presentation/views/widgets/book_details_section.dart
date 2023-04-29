@@ -23,9 +23,12 @@ class BookDetailsSection extends StatelessWidget {
             bottom: 30,
             top: kDefaultPadding / 2,
           ),
-          child: CustomBookImage(
-            book: book,
-            imageUrl: book.volumeInfo.imageLinks.thumbnail,
+          child: Hero(
+            tag: book.id!,
+            child: CustomBookImage(
+              book: book,
+              imageUrl: book.volumeInfo.imageLinks.thumbnail,
+            ),
           ),
         ),
         Text(

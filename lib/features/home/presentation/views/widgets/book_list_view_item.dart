@@ -14,7 +14,10 @@ class BookListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => navigateTo(context, BookDetailsView(book: book)),
+      onTap: () => navigateTo(
+        context: context,
+        screen: BookDetailsView(book: book),
+      ),
       child: SizedBox(
         height: 130,
         child: Row(

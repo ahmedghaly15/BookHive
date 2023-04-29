@@ -31,8 +31,8 @@ class BookActions extends StatelessWidget {
             child: CustomButton(
               onPressed: () {
                 navigateTo(
-                  context,
-                  WebViewScreen(
+                  context: context,
+                  screen: WebViewScreen(
                     url: book.volumeInfo.previewLink!,
                   ),
                 );

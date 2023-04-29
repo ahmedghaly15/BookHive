@@ -18,6 +18,7 @@ dependencies:
   flutter_launcher_icons: ^0.13.1
   font_awesome_flutter: ^10.4.0
   get_it: ^7.3.0
+  get: ^4.6.5
   google_fonts: ^4.0.3
   webview_flutter: ^2.0.3
 

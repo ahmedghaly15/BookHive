@@ -1,3 +1,4 @@
+import 'package:book_hive/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -15,7 +16,7 @@ class SplashViewBody extends StatefulWidget {
 class _SplashViewBodyState extends State<SplashViewBody>
     with SingleTickerProviderStateMixin {
   late AnimationController animationController;
-  late Animation<double> fadeAnimation;
+  late Animation<Offset> slideAnimation;
 
   @override
   void initState() {
@@ -36,17 +37,31 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      // To rebuild only this widget
-      child: AnimatedBuilder(
-        animation: fadeAnimation,
-        builder: (context, _) => FadeTransition(
-          opacity: fadeAnimation,
-          child: Image.asset(
-            AssetsData.logo,
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Image.asset(
+          AssetsData.logo,
+        ),
+        AnimatedBuilder(
+          animation: slideAnimation,
+          builder: (context, _) => SlideTransition(
+            position: slideAnimation,
+            child: Container(
+              margin: EdgeInsets.only(
+                left: MediaQuery.of(context).size.width * 0.1,
+              ),
+              child: Text(
+                "Find Free Books",
+                style: Styles.textStyle16.copyWith(
+                  fontWeight: FontWeight.w600,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
           ),
         ),
-      ),
+      ],
     );
   }
 
@@ -67,10 +82,11 @@ class _SplashViewBodyState extends State<SplashViewBody>
       duration: const Duration(seconds: 3),
     );
 
-    fadeAnimation = Tween<double>(
-      begin: 0,
-      end: 1,
-    ).animate(animationController);
+    slideAnimation = Tween<Offset>(
+      begin: const Offset(0, 8),
+      end: Offset.zero,
+    ).animate(CurvedAnimation(
+        parent: animationController, curve: Curves.fastOutSlowIn));
 
     animationController.forward();
   }

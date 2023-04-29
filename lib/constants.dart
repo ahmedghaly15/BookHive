@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 const Color kPrimaryColor = Color(0xff102e44);
 
@@ -9,17 +10,16 @@ const String kGTSectraFine = 'GT Sectra Fine';
 const double kDefaultPadding = 24.0;
 
 void navigateBack(context) {
-  Navigator.pop(context);
+  Get.back();
 }
 
 void navigateTo(context, Widget screen) {
-  Navigator.of(context).push(MaterialPageRoute(builder: (context) => screen));
+  Get.to(screen, transition: Transition.leftToRightWithFade);
 }
 
 void navigateAndFinish(context, {required Widget screen}) {
-  Navigator.pushAndRemoveUntil(
-    context,
-    MaterialPageRoute(builder: (context) => screen),
-    (Route<dynamic> route) => false, // remove all previous routes
+  Get.off(
+    () => screen,
+    transition: Transition.fadeIn,
   );
 }

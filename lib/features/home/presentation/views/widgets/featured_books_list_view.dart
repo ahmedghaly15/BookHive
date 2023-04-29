@@ -6,6 +6,7 @@ import '/core/widgets/custom_loading_indicator.dart';
 import '/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
 import '/features/home/presentation/manager/featured_books_cubit/featured_books_states.dart';
 import 'custom_book_image.dart';
+import 'shimmer_featured_list_view.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
   const FeaturedBooksListView({super.key});
@@ -41,7 +42,7 @@ class FeaturedBooksListView extends StatelessWidget {
         } else if (state is FeaturedBooksFailureState) {
           return CustomErrorWidget(errorMessage: state.errorMessage);
         } else {
-          return const CustomLoadingIndicator();
+          return const ShimmerFeaturedListView();
         }
       },
     );

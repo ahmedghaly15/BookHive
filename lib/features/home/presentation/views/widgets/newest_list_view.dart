@@ -7,6 +7,7 @@ import '/core/widgets/custom_loading_indicator.dart';
 import '/features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
 import '/features/home/presentation/manager/newest_books_cubit/newest_books_states.dart';
 import 'book_list_view_item.dart';
+import 'shimmer_newest_list_view.dart';
 
 class NewestListView extends StatelessWidget {
   const NewestListView({super.key});
@@ -35,7 +36,7 @@ class NewestListView extends StatelessWidget {
         } else if (state is NewestBooksFailureState) {
           return CustomErrorWidget(errorMessage: state.errorMessage);
         } else {
-          return const CustomLoadingIndicator();
+          return const ShimmerNewestListView();
         }
       },
     );

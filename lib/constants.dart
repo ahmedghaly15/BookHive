@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 const Color kPrimaryColor = Color(0xff102e44);
+const Color kSeconderyColor = Color(0xff072136);
 
 const Duration kTransitionDuration = Duration(milliseconds: 250);
 

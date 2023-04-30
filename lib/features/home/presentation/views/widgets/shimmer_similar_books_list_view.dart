@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'widgets/shimmer_custom_book_image.dart';
+import 'shimmer_custom_book_image.dart';
 
 class ShimmerSimilarBooksListView extends StatelessWidget {
   const ShimmerSimilarBooksListView({super.key});

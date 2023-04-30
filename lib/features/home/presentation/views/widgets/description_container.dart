@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../constants.dart';
-import '../../../../../core/models/book_model/book_model.dart';
-import '../../../../../core/utils/styles.dart';
+import '/constants.dart';
+import '/core/models/book_model/book_model.dart';
+import '/core/utils/styles.dart';
 
 class DescriptionContainer extends StatelessWidget {
   final BookModel book;

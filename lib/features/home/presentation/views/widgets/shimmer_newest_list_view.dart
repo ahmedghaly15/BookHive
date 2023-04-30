@@ -1,7 +1,7 @@
-import 'package:book_hive/features/home/presentation/views/widgets/shimmer_book_list_view_item.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../constants.dart';
+import '/constants.dart';
+import 'shimmer_book_list_view_item.dart';
 
 class ShimmerNewestListView extends StatelessWidget {
   const ShimmerNewestListView({super.key});

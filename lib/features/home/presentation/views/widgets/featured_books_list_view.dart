@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '/core/widgets/custom_error_widget.dart';
-import '/core/widgets/custom_loading_indicator.dart';
 import '/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
 import '/features/home/presentation/manager/featured_books_cubit/featured_books_states.dart';
 import 'custom_book_image.dart';
@@ -39,8 +37,6 @@ class FeaturedBooksListView extends StatelessWidget {
               },
             ),
           );
-        } else if (state is FeaturedBooksFailureState) {
-          return CustomErrorWidget(errorMessage: state.errorMessage);
         } else {
           return const ShimmerFeaturedListView();
         }

@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '/constants.dart';
-import '/core/widgets/custom_error_widget.dart';
-import '/core/widgets/custom_loading_indicator.dart';
 import '/features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
 import '/features/home/presentation/manager/newest_books_cubit/newest_books_states.dart';
 import 'book_list_view_item.dart';
@@ -33,8 +31,6 @@ class NewestListView extends StatelessWidget {
               },
             ),
           );
-        } else if (state is NewestBooksFailureState) {
-          return CustomErrorWidget(errorMessage: state.errorMessage);
         } else {
           return const ShimmerNewestListView();
         }

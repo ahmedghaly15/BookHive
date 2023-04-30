@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '/core/models/book_model/book_model.dart';
-import '/core/widgets/custom_error_widget.dart';
 import '/core/widgets/custom_loading_indicator.dart';
 import '/features/home/presentation/manager/similar_books_cubit/similar_books_cubit.dart';
 import '/features/home/presentation/manager/similar_books_cubit/similar_books_states.dart';
@@ -42,8 +41,6 @@ class SimilarBooksListView extends StatelessWidget {
                   },
                 ),
               );
-            } else if (state is SimilarBooksFailureState) {
-              return CustomErrorWidget(errorMessage: state.errorMessage);
             } else {
               return const CustomLoadingIndicator();
             }

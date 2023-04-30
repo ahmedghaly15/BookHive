@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'skelton.dart';
+import '../../../../../core/widgets/skelton.dart';
 
 class ShimmerCustomBookImage extends StatelessWidget {
   const ShimmerCustomBookImage({

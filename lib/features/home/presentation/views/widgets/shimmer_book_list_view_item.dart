@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'shimmer_custom_book_image.dart';
-import 'skelton.dart';
+import '../../../../../core/widgets/skelton.dart';
 
 class ShimmerBookListViewItem extends StatelessWidget {
   const ShimmerBookListViewItem({super.key});

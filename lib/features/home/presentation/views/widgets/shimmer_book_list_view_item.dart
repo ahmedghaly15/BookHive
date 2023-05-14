@@ -33,9 +33,9 @@ class ShimmerBookListViewItem extends StatelessWidget {
                   width: MediaQuery.of(context).size.width * 0.2,
                 ),
                 const SizedBox(height: 10),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const <Widget>[
+                  children: <Widget>[
                     Skelton(
                       height: 10,
                       width: 50,

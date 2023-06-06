@@ -1,8 +1,14 @@
 # BookHive-App
 
-The App is built using MVVM pattern. The App allows book lovers to discover, read, and review their favorite books.
+BookHive is the ultimate reading companion for book lovers! With a vast library of books, including featured and newly released titles, BookHive makes it easy to discover your next favorite read.
 
-BookHive offers a vast collection of books across various genres including Computer Science and Artificial Intellignece and more. User can view the details of a book. User can search of any book he wants.
+The app's Book Details feature provides a comprehensive overview of each book in the library, including the book's title, author, rating, description, and related books. You can even preview each book before deciding to purchase or borrow it.
+
+BookHive's Search feature allows you to easily find any book you want within the library. Simply enter the title, author, or genre, and the app will display relevant results.
+
+The app's Featured and Newest Books sections highlight popular and newly released titles, making it easy to stay up-to-date with the latest and greatest books.
+
+Finally, BookHive's Related Books feature provides a list of books that are similar to the one you're currently reading, allowing you to easily discover new titles that you may enjoy.
 
 ## Contents
 
